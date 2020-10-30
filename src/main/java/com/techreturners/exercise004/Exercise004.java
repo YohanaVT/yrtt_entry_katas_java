@@ -7,6 +7,38 @@ public class Exercise004 {
 
     public String pigLatin(String str) {
         // Add your code here
-        return "";
+    	StringBuffer cadena = new StringBuffer();
+		String[] arrOfStr1 = str.split(" ");
+		String extraFirst="";
+		String change="";
+		String extraLast="";
+		String newValue = "";
+		String result="";
+		String world="";
+
+		for (int n = 0; n < arrOfStr1.length; n++) {
+			world = arrOfStr1[n];
+			extraFirst = world.substring(0, 1);
+			change = world.replace(extraFirst, "");
+			extraLast = world.substring(world.length() - 1);
+			char letter = extraLast.charAt(0);
+			
+			if (letter == ('!')) {
+				extraLast = change.substring(change.length() - 1);
+				String newReplace = change.replace(extraLast, "");
+				newValue = newReplace + extraFirst + "ay!";
+			} else {
+				newValue = change + extraFirst + "ay";
+			}
+
+			arrOfStr1[n] = newValue;
+		}
+		
+		for (int x=0;x<arrOfStr1.length;x++){
+			   cadena =cadena.append(arrOfStr1[x] + " ");
+		}
+		
+		result =cadena.toString().trim();
+        return result;
     }
 }
