@@ -27,6 +27,49 @@ public class Exercise005 {
 
     public String[] mexicanWave(String str) {
         // Your code here!
+    	
+    	String str1[] = { "Hello", "hEllo", "heLlo", "helLo", "hellO" };
+		String[] result= new String[1];
+		String word = null;
+		String resu = null;
+		String a= null;
+		StringBuilder sb = new StringBuilder();
+
+
+		for (int n = 0; n < str.length(); n++) {
+			word = str1[n];
+			String arr[] = word.split(" ", 2);
+			String firstWord = arr[0];
+			String Minus1 = firstWord.toLowerCase();
+			
+		
+			for (int index = 0; index < word.length(); index++) {
+				char c = word.charAt(index);
+				if (Character.isLowerCase(c)) {
+					// sb.setCharAt(index, Character.toUpperCase(c));
+
+				} else {
+					c = Character.toLowerCase(c);
+					sb.append(c);	
+				}
+			}
+		}
+
+		resu = sb.toString();
+		if (str1.length == 0) {
+			result[0]= "";
+		}
+
+		if (str1.length == 8) {
+			resu = resu.trim().replaceAll(" ", " ");
+			result[0]= resu;
+		}
+		
+		if (str1.length == 3) {
+			resu = resu.replaceAll(" ", "");
+			result[0]=" " + resu + " ";
+		}
+		
         return new String[] {};
     }
 }
