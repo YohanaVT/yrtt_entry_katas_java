@@ -7,7 +7,7 @@ public class Exercise004 {
 
     public String pigLatin(String str) {
         // Add your code here
-    	StringBuffer cadena = new StringBuffer();
+    	StringBuilder cadena = new StringBuilder();
 		String[] arrOfStr1 = str.split(" ");
 		String extraFirst="";
 		String change="";
